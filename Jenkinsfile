@@ -14,7 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running application test...'
-                bat 'findstr /C:"CI/CD Pipeline Working!" index.html'
+                bat 'findstr /C:"CI/CD Pipeline Version 2!" index.html'
             }
         }
 
