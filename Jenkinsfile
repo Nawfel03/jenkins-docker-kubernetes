@@ -45,7 +45,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
 
-                bat 'docker push YOUR_DOCKER_USERNAME/my-web-app:%BUILD_NUMBER%'
+                bat 'docker push nawfel03/my-web-app:%BUILD_NUMBER%'
             }
         }
 
@@ -57,7 +57,7 @@ pipeline {
                 bat 'kubectl apply -f deployment.yaml'
                 bat 'kubectl apply -f service.yaml'
 
-                bat 'kubectl set image deployment/my-web-app my-web-app=YOUR_DOCKER_USERNAME/my-web-app:%BUILD_NUMBER%'
+                bat 'kubectl set image deployment/my-web-app my-web-app=nawfel03/my-web-app:%BUILD_NUMBER%'
 
                 bat 'kubectl rollout status deployment/my-web-app --timeout=120s'
             }
